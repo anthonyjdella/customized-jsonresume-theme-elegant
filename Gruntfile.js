@@ -43,7 +43,7 @@ module.exports = function(grunt) {
             resumejson: {
                 cwd: './',
                 src: [ 'resume.json' ],
-                dest: './node_modules/resume-schema',
+                dest: './node_modules/anthonyjdella-resume-schema',
                 expand: true
             },
             build: {

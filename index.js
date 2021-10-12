@@ -189,10 +189,10 @@ function convertMarkdown(str) {
 function getFloatingNavItems(resume) {
     const floating_nav_items = [
         {label: 'About', target: 'about', icon: 'board', requires: 'basics.summary'},
-        {label: 'Work Experience', target: 'work-experience', icon: 'office', requires: 'work'},
-        {label: 'Projects Experience', target: 'projects-experience', icon: 'code', requires: 'projects'},
         {label: 'Skills', target: 'skills', icon: 'tools', requires: 'skills'},
+        {label: 'Work Experience', target: 'work-experience', icon: 'office', requires: 'work'},
         {label: 'Education', target: 'education', icon: 'graduation-cap', requires: 'education'},
+        {label: 'Projects', target: 'projects-experience', icon: 'code', requires: 'projects'},
         {label: 'Certificates', target: 'certificates', icon: 'profile', requires: 'certificates'},
         {label: 'Awards', target: 'awards', icon: 'trophy', requires: 'awards'},
         {label: 'Volunteer Work', target: 'volunteer-work', icon: 'child', requires: 'volunteer'},

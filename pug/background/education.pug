@@ -21,13 +21,13 @@ unless _.isEmpty(resume.education)
                     )
 
                   strong
-                    |#{education_info.area}, #{education_info.studyType},&nbsp;
+                    |#{education_info.studyType}, #{education_info.area}, &nbsp;
                   |#{education_info.institution}
 
-                p.text-muted(class=!education_info.gpa && _.isEmpty(education_info.courses) ? 'clear-margin' : '')
+                p.text-muted(class=!education_info.score && _.isEmpty(education_info.courses) ? 'clear-margin' : '')
                   small
                     |#{education_info.startDate} - #{education_info.endDate || 'Present'}
-                i= education_info.gpa
+                i= education_info.score
 
                 unless _.isEmpty(education_info.courses)
                   .space-top.labels
