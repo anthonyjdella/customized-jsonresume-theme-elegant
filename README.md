@@ -1,4 +1,4 @@
-# Cusomtized JSON Resume Theme: Elegant
+# Customized JSON Resume Theme: Elegant
 
 🖼️ This is a slightly tweaked version of the [Elegant theme](https://github.com/mudassir0909/jsonresume-theme-elegant). Tweaked to fit my design preferences.
 
