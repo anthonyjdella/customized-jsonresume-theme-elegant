@@ -12,6 +12,7 @@ jobs:
         with:
           node-version: 14
       - run: npm ci
+      - run: npm version patch
 
   publish-npm-registry:
     needs: build
@@ -22,7 +23,6 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
@@ -37,7 +37,6 @@ jobs:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
           scope: '@anthonyjdella'
-      - run: npm ci
       - run: echo registry=https://npm.pkg.github.com/anthonyjdella >> .npmrc
       - run: npm publish
         env:
