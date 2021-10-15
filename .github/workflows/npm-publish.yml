@@ -14,6 +14,7 @@ jobs:
           commit-message: 'CI: bumps version to {{version}} [skip ci]'
 
   publish-npm-registry:
+    needs: version-increment
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +28,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
   
   publish-github-registry:
-    needs: publish-npm-registry
+    needs: version-increment
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
