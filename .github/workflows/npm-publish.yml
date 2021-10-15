@@ -4,38 +4,21 @@ on:
     branches:
       - master
 jobs:
-  build:
-    name: Build and install dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Set-up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14
-      - run: npm ci
-
   publish-npm-registry:
-    needs: build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - name: "Automated Version Bump"
-        uses:  'phips28/gh-action-bump-version@master'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          default: prerelease
+      - run: npm ci
+      - run: npm version patch
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
-
+  
   publish-github-registry:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -44,6 +27,8 @@ jobs:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
           scope: '@anthonyjdella'
+      - run: npm ci
+      - run: npm version patch
       - run: echo registry=https://npm.pkg.github.com/anthonyjdella >> .npmrc
       - run: npm publish
         env:
