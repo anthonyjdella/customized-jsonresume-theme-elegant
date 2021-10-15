@@ -13,7 +13,12 @@ jobs:
           node-version: 14
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm version patch
+      - name:  'Automated Version Bump'
+        uses:  'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          default: prerelease
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
@@ -28,7 +33,12 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@anthonyjdella'
       - run: npm ci
-      - run: npm version patch
+      - name:  'Automated Version Bump'
+        uses:  'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          default: prerelease
       - run: echo registry=https://npm.pkg.github.com/anthonyjdella >> .npmrc
       - run: npm publish
         env:
