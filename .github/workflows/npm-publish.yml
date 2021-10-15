@@ -12,7 +12,13 @@ jobs:
         with:
           node-version: 14
       - run: npm ci
-      - run: npm version patch
+
+  version-bump:
+    uses:  'phips28/gh-action-bump-version@master'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        default: prerelease
 
   publish-npm-registry:
     needs: build
@@ -26,7 +32,7 @@ jobs:
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
-  
+
   publish-github-registry:
     needs: build
     runs-on: ubuntu-latest
