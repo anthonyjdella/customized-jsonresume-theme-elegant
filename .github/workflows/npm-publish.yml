@@ -24,6 +24,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
   
   publish-github-registry:
+    needs: publish-npm-registry
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
