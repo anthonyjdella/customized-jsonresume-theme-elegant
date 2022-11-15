@@ -1,0 +1,27 @@
+unless _.isEmpty(resume.writing)
+  .detail#writing-experience
+    .icon
+      i.fs-lg.icon-code
+      span.mobile-title Articles
+
+    .info
+      h4.title.text-uppercase Articles
+
+      ul.list-unstyled.clear-margin
+        each writing in resume.writing
+          li.card.card-nested.clearfix
+            .content
+              p.clear-margin.relative
+                if !writing.endDate
+                  i.icon-circle.current-event(
+                    rel="tooltip",
+                    title="Currently Working",
+                    data-placement="left"
+                  )
+                if writing.reference
+                  a(href=writing.reference, target="_blank")
+                    strong=writing.name
+                else
+                  strong=writing.name
+
+              p.text-muted

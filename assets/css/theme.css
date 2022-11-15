@@ -965,6 +965,9 @@ body {
   margin-left: 0;
 }
 @media print {
+  .card {
+    border: none !important;
+  }
   a[href]:after {
     content: none !important;
   }
@@ -986,7 +989,7 @@ body {
   .contact-details .detail {
     position: relative;
     float: left;
-    width: 25%;
+    width: 41.66666667%;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
@@ -998,5 +1001,23 @@ body {
   }
   .pagebreak {
     page-break-before: always;
+  }
+  #awards {
+    display: none;
+  }
+  #skills {
+    display: none;
+  }
+  #writing-experience {
+    display: none;
+  }
+  #projects-experience {
+    display: none;
+  }
+  .social-links {
+    display: none;
+  }
+  .card {
+    min-height: 0;
   }
 }

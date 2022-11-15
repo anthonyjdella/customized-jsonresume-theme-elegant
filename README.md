@@ -1,6 +1,41 @@
 # Customized JSON Resume Theme: Elegant
 
-🖼️ This is a slightly tweaked version of the [Elegant theme](https://github.com/mudassir0909/jsonresume-theme-elegant). Tweaked to fit my design preferences.
+🖼️ This is a tweaked version of the [Elegant theme](https://github.com/mudassir0909/jsonresume-theme-elegant). Tweaked to fit my design preferences.
+
+## Notable Changes
+
+* 2 Page version in PDF/printable mode 
+* Added sections for speaking and articles
+* Style changes
+
+## Prerequisites
+
+To build and start the local server, it needs to use the cli command, which is custom cli I tweaked.
+
+`npm i @anthonyjdella/customized-resume-cli`
+
+## How to Start
+
+To re-build HTML changes, execute: `grunt exec:compile_pug`
+
+To re-build CSS changes, execute: `grunt less`
+
+Then to start,
+
+`npm run start` for localhost:4000 
+
+or `grunt exec:run_server` for localhost:8080
+
+
+## How to Change
+
+* `index.js` is the order of the resume. Also make changes to `background-card.pug`
+* `pug/` are the html files for each section. To re-build HTML changes, execute: `grunt exec:compile_pug`
+* `assets/less` is the styling. To re-build CSS changes, execute: `grunt less`
+* To make changes to the PDF/printable version, make changes in the `@print` section of `assets/less/print.less`
+* Change version number in `package.json`
+* Deploy the changes via `npm publish --access public`
+* To see changes from `resume.anthonydellavecchia.com` you need to go to the [registry project](https://github.com/anthonyjdella/customized-registry-functions), then cd into `functions`, run `npm i` and `npm update`, then `firebase deploy`.
 
 <details>
   <summary>Click to expand README.md of the source repository!</summary>

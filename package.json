@@ -1,47 +1,49 @@
 {
-  "name": "@anthonyjdella/jsonresume-theme-anthonyjdella-elegant",
-  "version": "1.0.9",
-  "description": "Elegant theme for jsonresume",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/anthonyjdella/customized-jsonresume-theme-elegant"
-  },
-  "keywords": [
-    "jsonresume",
-    "theme",
-    "elegant"
-  ],
-  "author": "Anthony Dellavecchia <anthony.dellavecchia.tech@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/anthonyjdella/customized-jsonresume-theme-elegant/issues"
-  },
-  "homepage": "https://github.com/anthonyjdella/customized-jsonresume-theme-elegant",
-  "dependencies": {
-    "anthonyjdella-resume-schema": "^1.0.1",
-    "gravatar": "^1.0.6",
-    "handlebars": ">=4.0.14",
-    "jsonresume-themeutils": "^1.4.3",
-    "markdown-it": "^6.0.1",
-    "markdown-it-abbr": "^1.0.3",
-    "moment": "^2.22.2",
-    "pug": "^3.0.2",
-    "resume-schema": "1.0.0",
-    "sshpk": ">=1.13.2",
-    "tarball-extract": "0.0.3",
-    "underscore": "^1.6.0"
-  },
-  "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-less": "^2.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-exec": "^0.4.6",
-    "less": "^3.8.1"
-  }
+    "name": "@anthonyjdella/jsonresume-theme-anthonyjdella-elegant",
+    "version": "1.0.10",
+    "description": "Elegant theme for jsonresume",
+    "main": "index.js",
+    "scripts": {
+        "start": "resume serve --theme .",
+        "build": "mkdir -p public && resume export public/index.html --theme \"$(pwd)\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/anthonyjdella/customized-jsonresume-theme-elegant"
+    },
+    "keywords": [
+        "jsonresume",
+        "theme",
+        "elegant"
+    ],
+    "author": "Anthony Dellavecchia <anthony.dellavecchia.tech@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/anthonyjdella/customized-jsonresume-theme-elegant/issues"
+    },
+    "homepage": "https://github.com/anthonyjdella/customized-jsonresume-theme-elegant",
+    "dependencies": {
+        "anthonyjdella-resume-schema": "^1.0.1",
+        "gravatar": "^1.0.6",
+        "handlebars": ">=4.0.14",
+        "jsonresume-themeutils": "^1.4.3",
+        "markdown-it": "^6.0.1",
+        "markdown-it-abbr": "^1.0.3",
+        "moment": "^2.22.2",
+        "pug": "^3.0.2",
+        "resume-schema": "1.0.0",
+        "sshpk": ">=1.13.2",
+        "tarball-extract": "0.0.3",
+        "underscore": "^1.6.0"
+    },
+    "devDependencies": {
+        "grunt": "^1.0.4",
+        "grunt-contrib-clean": "^2.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-less": "^2.0.0",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-exec": "^0.4.6",
+        "less": "^3.8.1"
+    }
 }

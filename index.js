@@ -61,6 +61,9 @@ function render(resume) {
             .map(highlight => convertMarkdown(highlight));
     });
 
+        _(resume.writing).forEach((writing_info) => {
+        });
+
     _(resume.work).forEach(work_info => {
         const start_date = moment(work_info.startDate, 'YYYY-MM-DD');
         const end_date = moment(work_info.endDate, 'YYYY-MM-DD');
@@ -189,11 +192,12 @@ function convertMarkdown(str) {
 function getFloatingNavItems(resume) {
     const floating_nav_items = [
         {label: 'About', target: 'about', icon: 'board', requires: 'basics.summary'},
-        {label: 'Skills', target: 'skills', icon: 'tools', requires: 'skills'},
         {label: 'Work Experience', target: 'work-experience', icon: 'office', requires: 'work'},
         {label: 'Education', target: 'education', icon: 'graduation-cap', requires: 'education'},
         {label: 'Projects', target: 'projects-experience', icon: 'code', requires: 'projects'},
+        {label: 'Writing', target: 'writing-experience', icon: 'newspaper', requires: 'writing'},
         {label: 'Certificates', target: 'certificates', icon: 'profile', requires: 'certificates'},
+        {label: 'Skills', target: 'skills', icon: 'tools', requires: 'skills'},
         {label: 'Awards', target: 'awards', icon: 'trophy', requires: 'awards'},
         {label: 'Volunteer Work', target: 'volunteer-work', icon: 'child', requires: 'volunteer'},
         {label: 'Publications', target: 'publications', icon: 'newspaper', requires: 'publications'},
